@@ -7,9 +7,11 @@
 # Contact info@kdab.com for more information about this software.
 #
 
+set(Qt_VERSION_MAJOR 6)
+
 project(KDABBoatDemo)
 cmake_minimum_required(VERSION 3.9)
-find_package(Qt5 CONFIG REQUIRED COMPONENTS Core Gui Quick)
+find_package(Qt${Qt_VERSION_MAJOR} CONFIG REQUIRED COMPONENTS Core Gui Quick)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC TRUE)
 set(CMAKE_AUTORCC TRUE)
@@ -21,4 +23,4 @@ add_executable(KDABBoatDemo
   images.qrc
   data.qrc
 )
-target_link_libraries(KDABBoatDemo Qt5::Core Qt5::Gui Qt5::Quick)
+target_link_libraries(KDABBoatDemo Qt${Qt_VERSION_MAJOR}::Core Qt${Qt_VERSION_MAJOR}::Gui Qt${Qt_VERSION_MAJOR}::Quick)
